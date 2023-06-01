@@ -1,0 +1,24 @@
+ALGORITHM INSERTION_SORT
+
+VAR
+   //declare variables
+   arr: ARRAY_OF type[N];
+   i, j, key := INTEGER;
+   
+BEGIN
+
+FUNCTION insertionSort(arr) 
+{ 
+    let i, key, j; 
+    FOR i FROM 1 TO arr.length - 1 STEP i++ DO
+        key = arr[i]; 
+        j = i - 1; 
+   
+        /* Move elements of arr[0..i-1], that are greater than key, to one position ahead 
+        of their current position */
+        WHILE j >= 0 AND arr[j] > key
+            arr[j + 1] = arr[j]; 
+            j = j - 1; 
+        arr[j + 1] = key; 
+    } 
+} 
